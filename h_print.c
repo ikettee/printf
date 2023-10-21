@@ -14,7 +14,7 @@
 int h_prt(const char *fmt, int *indx, va_list lt, char buffer[],
 	int flags, int wd, int pre, int sz)
 {
-	int g, unkn_len = 0, prt_chara = -1;
+	int g, unkn_len = 0, prt_chara1 = -1;
 	fmt_t fmt_types[] = {
 		{'c', prt_chara}, {'s', prt_string}, {'%', prt_sign},
 		{'i', prt_integer}, {'d', prt_integer}, {'b', prt_binary},
@@ -46,6 +46,6 @@ int h_prt(const char *fmt, int *indx, va_list lt, char buffer[],
 		unkn_len += write(1, &fmt[*indx], 1);
 		return (unkn_len);
 	}
-	return (prt_chara);
+	return (prt_chara1);
 }
 
